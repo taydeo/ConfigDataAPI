@@ -1,0 +1,32 @@
+configVersion: 1
+
+Server Options:
+  portNumber: 1988
+  maxConnections: 100
+  ipAddress: 0.0.0.0 # sets it to your servers current IP
+  debugModeOn: false # outputs the contents of the file into the console so you can develop your own JS file parser
+
+Info to Fetch Options: # feature isnt suppported yet
+  anythingMySQL:
+    port: 8088
+    host: 192.0.0.1
+    username: user
+    password: pass
+    database: db
+    ssl: TRUE # set false if your MySQL server doesnt support ssl (it should lol)
+
+filesToSend:
+  localFile-example: # all files must have the prefix localFile-, otherwise it wont work
+    # must be relative path, i.e plugins/RandomPlugin/data/player.json
+    # since this sends the raw file, all file types are supported, if you are displaying this information on a website
+    # or something, write your own script to parse the data. an example is included in the config folder.
+
+    serviceName: Test # no duplicates lmao
+    pathToDir: path/to/dir/file.json
+
+    # lets say the plugin you wanna get data from stores playerdata with a players
+    # UUID in a big folder. its easy, all you do is /path/to/plugin/players/
+    # that tells the plugin to not worry about an EXACT file, and instead look for the
+    # file with the marked UUID. this ONLY supports JSON files.
+    # to request such data, you add a ?UUID=
+    # i.e https://randomserver.net/datatofetch/MyPlayerData?UUID=uuid

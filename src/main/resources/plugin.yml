@@ -1,0 +1,7 @@
+name: CustomAPIs
+version: ${project.version}
+main: mc.saturnstudios.customrestapis.CustomRESTAPIs
+api-version: 1.15
+load: POSTWORLD
+authors: [taydeo]
+description: Create custom APIs that fetch any value from a local file.
